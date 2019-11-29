@@ -4,6 +4,8 @@
     <color name="colorPrimaryDark">#00574B</color>
     <color name="colorAccent">#D81B60</color>
     <color name="colorWhite">#FFFFFF</color>
+    <color name="colorNearWhite">#E9E5E5</color>
+    <color name="colorBlack">#000000</color>
     <color name="colorBlue">#110ACE</color>
     <color name="bg_login">#26ae90</color>
     <color name="bg_register">#2e3237</color>
@@ -18,4 +20,5 @@
     <color name="btn_login_bg">#eceef1</color>
     <color name="lbl_name">#333333</color>
     <color name="btn_logut_bg">#ff6861</color>
+    <color name="opacity">#45969595</color>
 </resources>
