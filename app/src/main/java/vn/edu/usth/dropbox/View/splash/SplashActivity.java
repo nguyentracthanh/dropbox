@@ -7,7 +7,7 @@ import android.os.Bundle;
 import android.os.Handler;
 
 
-import vn.edu.usth.dropbox.Author.Author;
+
 import vn.edu.usth.dropbox.R;
 import vn.edu.usth.dropbox.View.authen.Author;
 

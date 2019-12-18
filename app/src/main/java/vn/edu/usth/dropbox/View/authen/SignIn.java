@@ -37,31 +37,31 @@ public class SignIn extends Fragment {
     }
 
     private void addListener() {
-        dangnhap.setOnClickListener(new View.OnClickListener() {
-            @Override
-            public void onClick(View v) {
-                mail.getText().toString();
-                pass.getText().toString();
-                Log.d("checker",mail.getText().toString());
-                Log.d("checker",pass.getText().toString());
-                if (("thanhnt.usth@gmail.com".equals(mail.getText().toString()))&&("thanhnt".equals(pass.getText().toString()) ))
-                {
-                    Toast.makeText(v.getContext(), "SignIn success", Toast.LENGTH_SHORT).show();
+//        dangnhap.setOnClickListener(new View.OnClickListener() {
+//            @Override
+//            public void onClick(View v) {
+//                mail.getText().toString();
+//                pass.getText().toString();
+//                Log.d("checker",mail.getText().toString());
+//                Log.d("checker",pass.getText().toString());
+//                if (("thanhnt.usth@gmail.com".equals(mail.getText().toString()))&&("thanhnt".equals(pass.getText().toString()) ))
+//                {
+//                    Toast.makeText(v.getContext(), "SignIn success", Toast.LENGTH_SHORT).show();
                     Intent intent=new Intent(getActivity(), HomeActivity.class);
                     startActivity(intent);
 
                 }
-                else {
-                    Toast.makeText(v.getContext(), " SignIn fail ", Toast.LENGTH_SHORT).show();
-
-                }
-
-
-
-            }
-
-        });
-    }
+//                else {
+//                    Toast.makeText(v.getContext(), " SignIn fail ", Toast.LENGTH_SHORT).show();
+//
+//                }
+//
+//
+//
+//            }
+//
+//        });
+//    }
 
 
 }
