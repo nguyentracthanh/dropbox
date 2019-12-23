@@ -22,7 +22,7 @@ public class PaperFragment extends Fragment {
                              ViewGroup container, Bundle savedInstanceState) {
         paperViewModel =
                 ViewModelProviders.of(this).get(PaperViewModel.class);
-        View root = inflater.inflate(R.layout.fragment_send, container, false);
+        View root = inflater.inflate(R.layout.fragment_files, container, false);
         final TextView textView = root.findViewById(R.id.text_send);
         paperViewModel.getText().observe(this, new Observer<String>() {
             @Override

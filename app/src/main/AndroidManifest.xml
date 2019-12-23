@@ -9,12 +9,14 @@
         android:label="@string/app_name"
         android:roundIcon="@mipmap/ic_launcher_round"
         android:supportsRtl="true"
-        android:theme="@style/AppTheme">
-        <activity android:name=".View.splash.SplashActivity"/>
+        android:theme="@style/AppTheme"
+         >
         <activity android:name=".View.home.HomeActivity"/>
-        <activity
-            android:name=".View.authen.Author"
-            android:label="@string/app_name"
+
+<!--        <activity-->
+<!--            android:name=".View.splash.SplashActivity"-->
+<!--            android:theme="@style/SplashTheme"/>-->
+        <activity android:name=".View.authen.Author"
             android:theme="@style/AppTheme.NoActionBar">
             <intent-filter>
                 <action android:name="android.intent.action.MAIN" />
@@ -22,6 +24,7 @@
                 <category android:name="android.intent.category.LAUNCHER" />
             </intent-filter>
         </activity>
+
     </application>
 
 </manifest>

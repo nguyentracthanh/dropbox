@@ -22,7 +22,7 @@ public class UpgradeFragment extends Fragment {
                              ViewGroup container, Bundle savedInstanceState) {
         upgradeViewModel =
                 ViewModelProviders.of(this).get(UpgradeViewModel.class);
-        View root = inflater.inflate(R.layout.fragment_send, container, false);
+        View root = inflater.inflate(R.layout.fragment_files, container, false);
         final TextView textView = root.findViewById(R.id.text_send);
         upgradeViewModel.getText().observe(this, new Observer<String>() {
             @Override
