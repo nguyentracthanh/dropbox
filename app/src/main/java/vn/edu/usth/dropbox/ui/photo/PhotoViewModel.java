@@ -1,14 +1,14 @@
-package vn.edu.usth.dropbox.ui.tools;
+package vn.edu.usth.dropbox.ui.photo;
 
 import androidx.lifecycle.LiveData;
 import androidx.lifecycle.MutableLiveData;
 import androidx.lifecycle.ViewModel;
 
-public class ToolsViewModel extends ViewModel {
+public class PhotoViewModel extends ViewModel {
 
     private MutableLiveData<String> mText;
 
-    public ToolsViewModel() {
+    public PhotoViewModel() {
         mText = new MutableLiveData<>();
         mText.setValue("This is tools fragment");
     }

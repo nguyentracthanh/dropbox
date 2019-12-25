@@ -22,7 +22,7 @@ public class OfflineFragment extends Fragment {
                              ViewGroup container, Bundle savedInstanceState) {
         offlineViewModel =
                 ViewModelProviders.of(this).get(OfflineViewModel.class);
-        View root = inflater.inflate(R.layout.fragment_share, container, false);
+        View root = inflater.inflate(R.layout.fragment_offline, container, false);
         final TextView textView = root.findViewById(R.id.text_share);
         offlineViewModel.getText().observe(this, new Observer<String>() {
             @Override

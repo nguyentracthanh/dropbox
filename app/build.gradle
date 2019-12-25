@@ -40,8 +40,11 @@ dependencies {
     //gg
     implementation 'com.google.android.gms:play-services-auth:17.0.0'
 
+    //color_img
+    implementation 'com.github.devsideal:VectorChildFinder:1.0.0'
 
 
 }
-
+dependencies {
+    implementation 'com.intuit.sdp:sdp-android:1.0.6'}
 

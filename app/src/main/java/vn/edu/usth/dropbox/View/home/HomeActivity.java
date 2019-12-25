@@ -1,18 +1,13 @@
 package vn.edu.usth.dropbox.View.home;
 
-import android.app.FragmentManager;
-import android.content.Intent;
 import android.graphics.Color;
 import android.os.Bundle;
 
 import com.google.android.material.floatingactionbutton.FloatingActionButton;
 import com.google.android.material.snackbar.Snackbar;
 
-import android.view.MenuItem;
 import android.view.View;
 
-import androidx.fragment.app.Fragment;
-import androidx.fragment.app.FragmentTransaction;
 import androidx.navigation.NavController;
 import androidx.navigation.Navigation;
 import androidx.navigation.ui.AppBarConfiguration;
@@ -28,14 +23,6 @@ import androidx.appcompat.widget.Toolbar;
 import android.view.Menu;
 
 import vn.edu.usth.dropbox.R;
-import vn.edu.usth.dropbox.ui.files.FilesFragment;
-import vn.edu.usth.dropbox.ui.home.HomeFragment;
-import vn.edu.usth.dropbox.ui.notification.NotificationFragment;
-import vn.edu.usth.dropbox.ui.offline.OfflineFragment;
-import vn.edu.usth.dropbox.ui.paper.PaperFragment;
-import vn.edu.usth.dropbox.ui.setting.SettingFragment;
-import vn.edu.usth.dropbox.ui.tools.ToolsFragment;
-import vn.edu.usth.dropbox.ui.upgrade_account.UpgradeFragment;
 
 public class HomeActivity extends AppCompatActivity {
 

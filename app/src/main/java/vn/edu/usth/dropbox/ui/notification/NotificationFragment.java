@@ -22,7 +22,7 @@ public class NotificationFragment extends Fragment {
                              ViewGroup container, Bundle savedInstanceState) {
         notificationViewModel =
                 ViewModelProviders.of(this).get(NotificationViewModel.class);
-        View root = inflater.inflate(R.layout.fragment_slideshow, container, false);
+        View root = inflater.inflate(R.layout.fragment_noti, container, false);
         final TextView textView = root.findViewById(R.id.text_slideshow);
         notificationViewModel.getText().observe(this, new Observer<String>() {
             @Override
