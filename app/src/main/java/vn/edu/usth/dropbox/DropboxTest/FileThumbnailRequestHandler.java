@@ -1,4 +1,4 @@
-package vn.edu.usth.dropbox;
+package vn.edu.usth.dropbox.DropboxTest;
 
 import android.net.Uri;
 

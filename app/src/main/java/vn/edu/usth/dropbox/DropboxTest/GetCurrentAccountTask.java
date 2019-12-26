@@ -1,46 +1,46 @@
-package vn.edu.usth.dropbox;
+package vn.edu.usth.dropbox.DropboxTest;
 
 import android.os.AsyncTask;
 
 import com.dropbox.core.DbxException;
 import com.dropbox.core.v2.DbxClientV2;
-import com.dropbox.core.v2.files.ListFolderResult;
+import com.dropbox.core.v2.users.FullAccount;
 
 /**
- * Async task to list items in a folder
+ * Async task for getting user account info
  */
-class ListFolderTask extends AsyncTask<String, Void, ListFolderResult> {
+class GetCurrentAccountTask extends AsyncTask<Void, Void, FullAccount> {
 
     private final DbxClientV2 mDbxClient;
     private final Callback mCallback;
     private Exception mException;
 
     public interface Callback {
-        void onDataLoaded(ListFolderResult result);
-
+        void onComplete(FullAccount result);
         void onError(Exception e);
     }
 
-    public ListFolderTask(DbxClientV2 dbxClient, Callback callback) {
+    GetCurrentAccountTask(DbxClientV2 dbxClient, Callback callback) {
         mDbxClient = dbxClient;
         mCallback = callback;
     }
 
     @Override
-    protected void onPostExecute(ListFolderResult result) {
-        super.onPostExecute(result);
-
+    protected void onPostExecute(FullAccount account) {
+        super.onPostExecute(account);
         if (mException != null) {
             mCallback.onError(mException);
         } else {
-            mCallback.onDataLoaded(result);
+            mCallback.onComplete(account);
         }
     }
 
     @Override
-    protected ListFolderResult doInBackground(String... params) {
+    protected FullAccount doInBackground(Void... params) {
+
         try {
-            return mDbxClient.files().listFolder(params[0]);
+            return mDbxClient.users().getCurrentAccount();
+
         } catch (DbxException e) {
             mException = e;
         }

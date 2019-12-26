@@ -1,4 +1,4 @@
-package vn.edu.usth.dropbox;
+package vn.edu.usth.dropbox.DropboxTest;
 
 import com.dropbox.core.oauth.DbxCredential;
 import com.dropbox.core.v2.DbxClientV2;

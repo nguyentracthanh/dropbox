@@ -1,4 +1,4 @@
-package vn.edu.usth.dropbox;
+package vn.edu.usth.dropbox.DropboxTest;
 
 import android.Manifest;
 import android.app.AlertDialog;
@@ -31,6 +31,8 @@ import com.google.android.material.floatingactionbutton.FloatingActionButton;
 import java.io.File;
 import java.text.DateFormat;
 import java.util.List;
+
+import vn.edu.usth.dropbox.R;
 
 
 /**

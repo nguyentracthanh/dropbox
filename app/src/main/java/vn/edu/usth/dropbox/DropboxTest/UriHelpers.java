@@ -1,4 +1,4 @@
-package vn.edu.usth.dropbox;
+package vn.edu.usth.dropbox.DropboxTest;
 
 import android.content.ContentUris;
 import android.content.Context;

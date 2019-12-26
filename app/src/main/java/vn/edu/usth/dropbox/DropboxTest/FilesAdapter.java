@@ -1,4 +1,4 @@
-package vn.edu.usth.dropbox;
+package vn.edu.usth.dropbox.DropboxTest;
 
 import android.content.Context;
 
@@ -19,6 +19,8 @@ import com.squareup.picasso.Picasso;
 import java.util.ArrayList;
 import java.util.Collections;
 import java.util.List;
+
+import vn.edu.usth.dropbox.R;
 
 /**
  * Adapter for file list

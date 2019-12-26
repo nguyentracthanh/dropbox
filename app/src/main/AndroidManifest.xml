@@ -10,12 +10,23 @@
         android:label="@string/app_name"
         android:roundIcon="@mipmap/ic_launcher_round"
         android:supportsRtl="true"
-        android:theme="@style/AppTheme">
-        <activity android:name=".View.authen.Signup"></activity>
-        <activity android:name=".View.authen.Login" />
+        android:theme="@style/AppTheme"
+        android:hardwareAccelerated="false"
+
+        >
+
+    <!--        <activity android:name=".View.authen.Signup"></activity>-->
         <activity
-            android:name=".View.splash.SplashActivity"
-            android:theme="@style/SplashTheme">
+            android:name=".DropboxTest.FilesActivity"
+            android:label="@string/title_activity_files" />
+        <activity android:name=".View.authen.Login" />
+
+<!--        <activity-->
+<!--            android:name=".View.splash.SplashActivity"-->
+<!--            android:theme="@style/SplashTheme"/>-->
+            <activity
+                android:name=".View.authen.Author"
+                android:theme="@style/AppTheme.NoActionBar" >
             <intent-filter>
                 <action android:name="android.intent.action.MAIN" />
 
@@ -37,9 +48,7 @@
                 <category android:name="android.intent.category.DEFAULT" />
             </intent-filter>
         </activity>
-        <activity
-            android:name=".View.authen.Author"
-            android:theme="@style/AppTheme.NoActionBar" />
+
         <activity android:name=".View.home.HomeActivity" />
     </application>
 

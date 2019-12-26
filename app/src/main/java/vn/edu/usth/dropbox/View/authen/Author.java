@@ -45,7 +45,7 @@ public class Author extends AppCompatActivity {
             @Override
             public void onClick(View v) {
 
-                Toast.makeText(v.getContext(), "SignUp new account", Toast.LENGTH_SHORT).show();
+//                Toast.makeText(v.getContext(), "SignUp new account", Toast.LENGTH_SHORT).show();
                 Intent signup=new Intent(Author.this,Signup.class);
                 startActivity(signup);
             }
@@ -56,7 +56,7 @@ public class Author extends AppCompatActivity {
             @Override
             public void onClick(View v) {
 
-                Toast.makeText(v.getContext(), "SignIn", Toast.LENGTH_SHORT).show();
+//                Toast.makeText(v.getContext(), "SignIn", Toast.LENGTH_SHORT).show();
                 Intent signin=new Intent(Author.this,Login.class);
                 startActivity(signin);
             }

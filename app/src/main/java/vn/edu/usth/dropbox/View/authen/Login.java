@@ -1,57 +1,85 @@
 package vn.edu.usth.dropbox.View.authen;
 
-import androidx.appcompat.app.AppCompatActivity;
-
+import android.app.ProgressDialog;
+import android.content.Intent;
 import android.os.Bundle;
 import android.util.Log;
 import android.view.View;
 import android.widget.Button;
 import android.widget.EditText;
 import android.widget.TextView;
+import android.widget.Toast;
 
-import com.dropbox.core.v2.users.FullAccount;
+import androidx.appcompat.app.AppCompatActivity;
 
-import vn.edu.usth.dropbox.DropboxActivity;
-import vn.edu.usth.dropbox.DropboxClientFactory;
+
+import com.google.firebase.database.DataSnapshot;
+import com.google.firebase.database.DatabaseError;
+import com.google.firebase.database.DatabaseReference;
+import com.google.firebase.database.FirebaseDatabase;
+import com.google.firebase.database.ValueEventListener;
+
 import vn.edu.usth.dropbox.R;
+import vn.edu.usth.dropbox.View.home.HomeActivity;
+import vn.edu.usth.dropbox.common.Common;
+import vn.edu.usth.dropbox.model.request.User;
 
-public class Login extends DropboxActivity {
+public class Login extends AppCompatActivity {
     Button btnSignin;
     EditText editmail,editpass;
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_login);
-        editmail=findViewById(R.id.input_email);
-        editpass=findViewById(R.id.input_pass);
-        btnSignin=findViewById(R.id.btnsignin2);
-        btnSignin.setOnClickListener(new View.OnClickListener() {
+        editmail = findViewById(R.id.input_email);
+        editpass = findViewById(R.id.input_pass);
+        btnSignin = findViewById(R.id.btnsignin2);
+
+        FirebaseDatabase database=FirebaseDatabase.getInstance();
+        final DatabaseReference table_user=database.getReference("User");
+        btnSignin.setOnClickListener(new View.OnClickListener(){
             @Override
             public void onClick(View v) {
-                DropboxActivity.startOAuth2Authentication(Login.this, getString(R.string.app_key), null);
 
+
+                final ProgressDialog mDialog=new ProgressDialog(Login.this);
+                mDialog.setMessage("Please waiting...");
+                mDialog.show();
+                table_user.addListenerForSingleValueEvent(new ValueEventListener(){
+
+                    @Override
+                    public void onDataChange(DataSnapshot dataSnapshot) {
+                        //check user exits or not
+                        if (dataSnapshot.child(editmail.getText().toString()).exists()) {
+
+                            //Get information
+                            mDialog.dismiss();
+
+                            User user = dataSnapshot.child(editmail.getText().toString()).getValue(User.class);
+                            if (user.getPassword().equals(editpass.getText().toString())) {
+                                {
+                                    Intent homeIntent = new Intent(Login.this, HomeActivity.class);
+                                    Common.currentUser = user;
+                                    startActivity(homeIntent);
+                                    finish();
+                                }
+                            } else {
+                                Toast.makeText(Login.this, "Sign in false!", Toast.LENGTH_SHORT).show();
+                            }
+                        }
+                        else {
+                            Toast.makeText(Login.this, "User is not existed!", Toast.LENGTH_SHORT).show();
+                        }
+                    }
+
+                    @Override
+                    public void onCancelled(DatabaseError databaseError) {
+
+                    }
+                });
             }
         });
     }
 
-    @Override
-    protected void onResume() {
-        super.onResume();
-    }
-    @Override
-    protected void loadData() {
-        new GetCurrentAccountTask(DropboxClientFactory.getClient(), new GetCurrentAccountTask.Callback() {
-            @Override
-            public void onComplete(FullAccount result) {
-                ((TextView) findViewById(R.id.mailAuthor)).setText(result.getEmail());
-                ((TextView) findViewById(R.id.nameAuthor)).setText(result.getName().getDisplayName());
-                ((TextView) findViewById(R.id.typeAccount)).setText(result.getAccountType().name());
-            }
 
-            @Override
-            public void onError(Exception e) {
-                Log.e(getClass().getName(), "Failed to get account details.", e);
-            }
-        }).execute();
-    }
 }

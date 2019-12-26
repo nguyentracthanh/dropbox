@@ -7,12 +7,11 @@ import android.os.Bundle;
 import android.os.Handler;
 
 
+import com.dropbox.core.v2.sharing.UserInfo;
 
 import vn.edu.usth.dropbox.R;
 import vn.edu.usth.dropbox.View.authen.Author;
 import vn.edu.usth.dropbox.View.home.HomeActivity;
-import vn.edu.usth.dropbox.database.RealmContext;
-import vn.edu.usth.dropbox.model.response.UserInfo;
 
 /**
  *
@@ -29,26 +28,27 @@ public class SplashActivity extends Activity {
         handler.postDelayed(new Runnable() {
             @Override
             public void run() {
-                checkLogin();
+//                checkLogin();
+                goToAuthenScreen();
             }
         }, 1000);
     }
 
-    private void checkLogin() {
-        UserInfo userInfo = RealmContext.getInstance().getUser();
-        if (userInfo != null) {
-            goToHomeScreen();
-        } else {
-            goToAuthenScreen();
-        }
-    }
+//    private void checkLogin() {
+//        UserInfo userInfo = RealmContext.getInstance().getUser();
+//        if (userInfo != null) {
+//            goToHomeScreen();
+//        } else {
+//            goToAuthenScreen();
+//        }
+//    }
 
-    protected void goToHomeScreen() {
-        Intent intent = new Intent(this, HomeActivity.class);
-        intent.setFlags(Intent.FLAG_ACTIVITY_CLEAR_TASK
-                | Intent.FLAG_ACTIVITY_NEW_TASK);
-        startActivity(intent);
-    }
+//    protected void goToHomeScreen() {
+//        Intent intent = new Intent(this, HomeActivity.class);
+//        intent.setFlags(Intent.FLAG_ACTIVITY_CLEAR_TASK
+//                | Intent.FLAG_ACTIVITY_NEW_TASK);
+//        startActivity(intent);
+//    }
 
     protected void goToAuthenScreen() {
         Intent intent = new Intent(this, Author.class);
