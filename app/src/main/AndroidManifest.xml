@@ -3,28 +3,44 @@
     package="vn.edu.usth.dropbox">
 
     <uses-permission android:name="android.permission.INTERNET" />
+
     <application
         android:allowBackup="true"
         android:icon="@mipmap/ic_launcher"
         android:label="@string/app_name"
         android:roundIcon="@mipmap/ic_launcher_round"
         android:supportsRtl="true"
-        android:theme="@style/AppTheme"
-         >
-        <activity android:name=".View.home.HomeActivity"/>
-
-<!--        <activity-->
-<!--            android:name=".View.splash.SplashActivity"-->
-<!--            android:theme="@style/SplashTheme"/>-->
-        <activity android:name=".View.authen.Author"
-            android:theme="@style/AppTheme.NoActionBar">
+        android:theme="@style/AppTheme">
+        <activity android:name=".View.authen.Signup"></activity>
+        <activity android:name=".View.authen.Login" />
+        <activity
+            android:name=".View.splash.SplashActivity"
+            android:theme="@style/SplashTheme">
             <intent-filter>
                 <action android:name="android.intent.action.MAIN" />
 
                 <category android:name="android.intent.category.LAUNCHER" />
             </intent-filter>
         </activity>
+        <activity
+            android:name="com.dropbox.core.android.AuthActivity"
+            android:configChanges="orientation|keyboard"
+            android:launchMode="singleTask">
+            <intent-filter>
 
+                <!-- Change this to be db- followed by your app key -->
+                <data android:scheme="db-C_UJJ88lssAAAAAAAAAAb3vi7KlNX3vnT6yn-yDuJ1jgu50wsQ-7MtPI9AdcyjhL" />
+
+                <action android:name="android.intent.action.VIEW" />
+
+                <category android:name="android.intent.category.BROWSABLE" />
+                <category android:name="android.intent.category.DEFAULT" />
+            </intent-filter>
+        </activity>
+        <activity
+            android:name=".View.authen.Author"
+            android:theme="@style/AppTheme.NoActionBar" />
+        <activity android:name=".View.home.HomeActivity" />
     </application>
 
 </manifest>

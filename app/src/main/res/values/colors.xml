@@ -31,7 +31,7 @@
 
     <color name="colorGreen">#69C242</color>
 
-    <color name="colorBlue">#4267B2</color>
+    <color name="colorBlue">#0344CF</color>
     <color name="colorBlue50">#E8F0FE</color>
     <color name="colorLightBlue">#459FFC</color>
     <color name="colorMiddleBlue">#395996</color>
@@ -69,5 +69,11 @@
     <color name="gray_dfe1e6">#dfe1e6</color>
     <color name="green_00ce93">#00ce93</color>
     <color name="pink_d92d8a">#d92d8a</color>
-
+    <color name="dbx_white_opaque_100">#FFFFFFFF</color>
+    <color name="dbx_primary">#FF007EE5</color>
+    <color name="dbx_primary_dark">#FF0078d9</color>
+    <color name="dbx_color_control_normal">@color/dbx_primary</color>
+    <color name="dbx_color_control_activated">@color/dbx_primary</color>
+    <color name="dbx_color_control_highlight">@color/dbx_primary_dark</color>
+    <color name="dbx_color_switch_thumbNormal">@color/dbx_primary</color>
 </resources>

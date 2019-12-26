@@ -13,6 +13,7 @@
             android:layout_width="match_parent"
             android:layout_height="match_parent" />
 
+
         <com.google.android.material.navigation.NavigationView
             android:background="@color/colorWhite"
             android:id="@+id/nav_view"
@@ -25,7 +26,6 @@
             app:itemHorizontalPadding="15dp"
             app:itemIconPadding="@dimen/_20sdp"
             app:elevation="@dimen/_5sdp"
-            app:itemTextColor=""
 
             />
 

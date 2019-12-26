@@ -1,5 +1,6 @@
 package vn.edu.usth.dropbox.View.authen;
 
+import android.content.Intent;
 import android.os.Bundle;
 import android.view.View;
 import android.widget.Button;
@@ -45,12 +46,8 @@ public class Author extends AppCompatActivity {
             public void onClick(View v) {
 
                 Toast.makeText(v.getContext(), "SignUp new account", Toast.LENGTH_SHORT).show();
-                SignUp signup_fragment=new SignUp();
-                getSupportFragmentManager().beginTransaction()
-                        .replace(R.id.container, signup_fragment)
-                        .addToBackStack(null)
-                        .commit();
-
+                Intent signup=new Intent(Author.this,Signup.class);
+                startActivity(signup);
             }
 
         });
@@ -60,11 +57,8 @@ public class Author extends AppCompatActivity {
             public void onClick(View v) {
 
                 Toast.makeText(v.getContext(), "SignIn", Toast.LENGTH_SHORT).show();
-                SignIn login_Fragment=new SignIn();
-                getSupportFragmentManager().beginTransaction()
-                        .replace(R.id.container, login_Fragment)
-                        .addToBackStack(null)
-                        .commit();
+                Intent signin=new Intent(Author.this,Login.class);
+                startActivity(signin);
             }
         });
     }
