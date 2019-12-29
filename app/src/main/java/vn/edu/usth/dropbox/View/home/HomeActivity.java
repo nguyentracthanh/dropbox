@@ -2,7 +2,6 @@ package vn.edu.usth.dropbox.View.home;
 
 import android.content.Intent;
 import android.graphics.Color;
-import android.net.Uri;
 import android.os.Bundle;
 
 import com.google.android.material.floatingactionbutton.FloatingActionButton;
@@ -25,8 +24,9 @@ import androidx.appcompat.widget.Toolbar;
 import android.view.Menu;
 import android.widget.RelativeLayout;
 
+import vn.edu.usth.dropbox.MainActivity;
+import vn.edu.usth.dropbox.PickImageActivity;
 import vn.edu.usth.dropbox.R;
-import vn.edu.usth.dropbox.ui.upgrade_account.UpgradeFragment;
 
 public class HomeActivity extends AppCompatActivity {
 
@@ -35,7 +35,7 @@ public class HomeActivity extends AppCompatActivity {
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
-        setContentView(R.layout.activity_main);
+        setContentView(R.layout.activity_home);
         Toolbar toolbar = findViewById(R.id.toolbar);
         toolbar.setBackgroundColor(Color.WHITE);
         setSupportActionBar(toolbar);
@@ -44,8 +44,7 @@ public class HomeActivity extends AppCompatActivity {
         fab.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View view) {
-                Snackbar.make(view, "Replace with your own action", Snackbar.LENGTH_LONG)
-                        .setAction("Action", null).show();
+                startActivity(new Intent(HomeActivity.this, PickImageActivity.class));
             }
         });
         DrawerLayout drawer = findViewById(R.id.drawer_layout);

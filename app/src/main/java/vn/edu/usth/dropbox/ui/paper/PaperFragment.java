@@ -23,13 +23,7 @@ public class PaperFragment extends Fragment {
         paperViewModel =
                 ViewModelProviders.of(this).get(PaperViewModel.class);
         View root = inflater.inflate(R.layout.fragment_files, container, false);
-        final TextView textView = root.findViewById(R.id.text_send);
-        paperViewModel.getText().observe(this, new Observer<String>() {
-            @Override
-            public void onChanged(@Nullable String s) {
-                textView.setText(s);
-            }
-        });
+
         return root;
     }
 }

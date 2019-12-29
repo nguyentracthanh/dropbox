@@ -1,4 +1,4 @@
-package vn.edu.usth.dropbox.DropboxTest;
+package vn.edu.usth.dropbox;
 
 import android.net.Uri;
 
@@ -14,12 +14,12 @@ import com.squareup.picasso.RequestHandler;
 
 import java.io.IOException;
 
-import okio.Okio;
+import okio.Source;
 
 /**
  * Example Picasso request handler that gets the thumbnail url for a dropbox path
  * Only handles urls like dropbox://dropbox/[path_to_file]
- * See {@link FilesAdapter} for usage
+ * See
  */
 public class FileThumbnailRequestHandler extends RequestHandler {
 
@@ -53,10 +53,12 @@ public class FileThumbnailRequestHandler extends RequestHandler {
             DbxDownloader<FileMetadata> downloader =
                     mDbxClient.files().getThumbnailBuilder(request.uri.getPath())
                             .withFormat(ThumbnailFormat.JPEG)
+                            .withFormat(ThumbnailFormat.PNG)
                             .withSize(ThumbnailSize.W1024H768)
                             .start();
-
-            return new Result(Okio.source(downloader.getInputStream()), Picasso.LoadedFrom.NETWORK);
+            // cái dưới snày là em thử fix, còn cái lỗi kia là nguyên bản :v
+            //            return new Result(BitmapFactory.decodeStream(downloader.getInputStream()), Picasso.LoadedFrom.NETWORK);
+            return new Result( downloader.getInputStream(), Picasso.LoadedFrom.NETWORK);
         } catch (DbxException e) {
             throw new IOException(e);
         }

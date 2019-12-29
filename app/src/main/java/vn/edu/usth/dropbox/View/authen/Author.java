@@ -40,17 +40,15 @@ public class Author extends AppCompatActivity {
         });
 
 
-
         btn_signup.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
-
-//                Toast.makeText(v.getContext(), "SignUp new account", Toast.LENGTH_SHORT).show();
-                Intent signup=new Intent(Author.this,Signup.class);
-                startActivity(signup);
+                Intent intent=new Intent(Author.this,Signup.class);
+                startActivity(intent);
             }
-
         });
+
+
 
         btn_signin.setOnClickListener(new View.OnClickListener() {
             @Override
@@ -63,33 +61,33 @@ public class Author extends AppCompatActivity {
         });
     }
 
-    @Override
-    protected void onStart() {
-        super.onStart();
-    }
-
-    @Override
-    protected void onStop() {
-        super.onStop();
-    }
-
-    @Override
-    protected void onDestroy() {
-        super.onDestroy();
-    }
-
-    @Override
-    protected void onResume() {
-        super.onResume();
-    }
-
-    @Override
-    protected void onRestart() {
-        super.onRestart();
-    }
-
-    @Override
-    protected void onPause() {
-        super.onPause();
-    }
+//    @Override
+//    protected void onStart() {
+//        super.onStart();
+//    }
+//
+//    @Override
+//    protected void onStop() {
+//        super.onStop();
+//    }
+//
+//    @Override
+//    protected void onDestroy() {
+//        super.onDestroy();
+//    }
+//
+//    @Override
+//    protected void onResume() {
+//        super.onResume();
+//    }
+//
+//    @Override
+//    protected void onRestart() {
+//        super.onRestart();
+//    }
+//
+//    @Override
+//    protected void onPause() {
+//        super.onPause();
+//    }
 }

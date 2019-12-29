@@ -3,11 +3,9 @@ package vn.edu.usth.dropbox.View.authen;
 import android.app.ProgressDialog;
 import android.content.Intent;
 import android.os.Bundle;
-import android.util.Log;
 import android.view.View;
 import android.widget.Button;
 import android.widget.EditText;
-import android.widget.TextView;
 import android.widget.Toast;
 
 import androidx.appcompat.app.AppCompatActivity;
@@ -26,12 +24,12 @@ import vn.edu.usth.dropbox.model.request.User;
 
 public class Login extends AppCompatActivity {
     Button btnSignin;
-    EditText editmail,editpass;
+    EditText editphone,editpass;
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_login);
-        editmail = findViewById(R.id.input_email);
+        editphone = findViewById(R.id.input_phone);
         editpass = findViewById(R.id.input_pass);
         btnSignin = findViewById(R.id.btnsignin2);
 
@@ -50,12 +48,12 @@ public class Login extends AppCompatActivity {
                     @Override
                     public void onDataChange(DataSnapshot dataSnapshot) {
                         //check user exits or not
-                        if (dataSnapshot.child(editmail.getText().toString()).exists()) {
+                        if (dataSnapshot.child(editphone.getText().toString()).exists()) {
 
                             //Get information
                             mDialog.dismiss();
 
-                            User user = dataSnapshot.child(editmail.getText().toString()).getValue(User.class);
+                            User user = dataSnapshot.child(editphone.getText().toString()).getValue(User.class);
                             if (user.getPassword().equals(editpass.getText().toString())) {
                                 {
                                     Intent homeIntent = new Intent(Login.this, HomeActivity.class);

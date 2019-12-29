@@ -19,11 +19,11 @@
         <EditText
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
-            android:id="@+id/input_email"
+            android:id="@+id/input_phone"
             android:maxLines="1"
             android:lines="1"
-            android:hint="Email"
-            android:inputType="textEmailAddress"/>
+            android:hint="Phone"
+            android:inputType="phone"/>
         <EditText
             android:layout_width="match_parent"
             android:layout_height="wrap_content"

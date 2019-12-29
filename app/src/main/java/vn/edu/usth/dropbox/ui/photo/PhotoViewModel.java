@@ -10,7 +10,7 @@ public class PhotoViewModel extends ViewModel {
 
     public PhotoViewModel() {
         mText = new MutableLiveData<>();
-        mText.setValue("This is tools fragment");
+        mText.setValue("This is photo fragment");
     }
 
     public LiveData<String> getText() {

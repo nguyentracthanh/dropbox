@@ -69,7 +69,7 @@
             android:layout_width="300dp"
             android:id="@+id/btnSignup"
             android:layout_height="50dp"
-            android:background="@color/colorBlue"
+            android:background="@drawable/botron_button_2"
             android:text="SIGN UP"
             android:textColor="@color/colorWhite"
             android:textSize="16dp"
@@ -105,7 +105,8 @@
             android:textAllCaps="false"
             android:textColor="@color/colorBlue"
             android:textSize="10dp"
-            android:linksClickable="true"/>
+            android:linksClickable="true"
+            />
 
     </LinearLayout>
 </androidx.constraintlayout.widget.ConstraintLayout>

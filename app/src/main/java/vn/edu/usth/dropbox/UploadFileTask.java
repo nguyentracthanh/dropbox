@@ -1,8 +1,9 @@
-package vn.edu.usth.dropbox.DropboxTest;
+package vn.edu.usth.dropbox;
 
 import android.content.Context;
 import android.net.Uri;
 import android.os.AsyncTask;
+import android.util.Log;
 
 import com.dropbox.core.DbxException;
 import com.dropbox.core.v2.DbxClientV2;
@@ -23,6 +24,7 @@ class UploadFileTask extends AsyncTask<String, Void, FileMetadata> {
     private final DbxClientV2 mDbxClient;
     private final Callback mCallback;
     private Exception mException;
+
 
     public interface Callback {
         void onUploadComplete(FileMetadata result);
@@ -52,14 +54,18 @@ class UploadFileTask extends AsyncTask<String, Void, FileMetadata> {
         String localUri = params[0];
         File localFile = UriHelpers.getFileForUri(mContext, Uri.parse(localUri));
 
+        Log.e("localFile",""+localFile);
+
         if (localFile != null) {
-            String remoteFolderPath = params[1];
 
             // Note - this is not ensuring the name is a valid dropbox file name
             String remoteFileName = localFile.getName();
 
-            try (InputStream inputStream = new FileInputStream(localFile)) {
-                return mDbxClient.files().uploadBuilder(remoteFolderPath + "/" + remoteFileName)
+            try  {
+
+
+                InputStream inputStream = new FileInputStream(localFile);
+                return mDbxClient.files().uploadBuilder(  "/" + remoteFileName)
                         .withMode(WriteMode.OVERWRITE)
                         .uploadAndFinish(inputStream);
             } catch (DbxException | IOException e) {

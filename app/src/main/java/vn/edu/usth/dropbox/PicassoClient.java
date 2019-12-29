@@ -1,4 +1,4 @@
-package vn.edu.usth.dropbox.DropboxTest;
+package vn.edu.usth.dropbox;
 
 import android.content.Context;
 
