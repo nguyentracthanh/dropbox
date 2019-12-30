@@ -79,7 +79,7 @@ public class MainActivity extends AppCompatActivity {
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
-        setContentView(R.layout.activity_home);
+        setContentView(R.layout.activity_main);
 
 
         StrictMode.ThreadPolicy policy = new StrictMode.ThreadPolicy.Builder().permitAll().build();
@@ -91,14 +91,7 @@ public class MainActivity extends AppCompatActivity {
 
         btn_upload = findViewById(R.id.uploadfile);
 
-        btn_upload.setOnClickListener(new View.OnClickListener() {
-            @Override
-            public void onClick(View view) {
-
-                uploadFiles();
-
-            }
-        });
+        btn_upload.setOnClickListener(view -> uploadFiles());
 
 
     }

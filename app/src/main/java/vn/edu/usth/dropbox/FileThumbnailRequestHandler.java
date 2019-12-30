@@ -14,6 +14,7 @@ import com.squareup.picasso.RequestHandler;
 
 import java.io.IOException;
 
+import okio.Okio;
 import okio.Source;
 
 /**
@@ -58,7 +59,7 @@ public class FileThumbnailRequestHandler extends RequestHandler {
                             .start();
             // cái dưới snày là em thử fix, còn cái lỗi kia là nguyên bản :v
             //            return new Result(BitmapFactory.decodeStream(downloader.getInputStream()), Picasso.LoadedFrom.NETWORK);
-            return new Result( downloader.getInputStream(), Picasso.LoadedFrom.NETWORK);
+            return new Result(Okio.source(downloader.getInputStream()), Picasso.LoadedFrom.NETWORK);
         } catch (DbxException e) {
             throw new IOException(e);
         }
